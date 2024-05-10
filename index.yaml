@@ -3,6 +3,19 @@ entries:
   orchestrator:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2024-05-10T08:34:00.77240026Z"
+    description: 'Helm chart to deploy the Orchestrator solution suite on OpenShift,
+      including Janus IDP backstage, SonataFlow Operator, OpenShift Serverless Operator,
+      Knative Eventing and Knative Serving. '
+    digest: eccef045041e53702813b33d4c201b0842c37a028c470bb92e420c44a0823b1d
+    icon: https://raw.githubusercontent.com/parodos-dev/parodos-dev.github.io/main/assets/images/WO_black.svg
+    name: orchestrator
+    type: application
+    urls:
+    - https://github.com/dmartinol/orchestrator-helm-chart/releases/download/orchestrator-0.2.31/orchestrator-0.2.31.tgz
+    version: 0.2.31
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2024-04-02T09:16:48.821071897Z"
     description: 'Helm chart to deploy the Orchestrator solution suite on OpenShift,
       including Janus IDP backstage, SonataFlow Operator, OpenShift Serverless Operator,
@@ -709,4 +722,30 @@ entries:
     urls:
     - https://github.com/parodos-dev/orchestrator-helm-chart/releases/download/orchestrator-0.1.0/orchestrator-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-02T09:16:48.82162957Z"
+  orchestrator-k8s:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-05-10T08:34:00.899350687Z"
+    dependencies:
+    - name: backstage
+      repository: https://janus-idp.github.io/helm-backstage
+      version: 2.11.4
+    - condition: postgresql-persistent.enabled
+      name: postgresql-persistent
+      repository: https://sclorg.github.io/helm-charts
+      version: 0.0.3
+    - condition: workflows.enabled
+      name: workflows
+      repository: https://parodos.dev/serverless-workflows-config
+      version: 0.2.0
+    description: 'Helm chart to deploy the Orchestrator solution suite on Kubernetes,
+      including Janus IDP backstage, SonataFlow Operator, Knative Eventing and Knative
+      Serving. '
+    digest: 083822c52930490f28cfb56154b65327b35caf4276b60ccb5ad0b11dc3fbb83b
+    icon: https://raw.githubusercontent.com/parodos-dev/parodos-dev.github.io/main/assets/images/WO_black.svg
+    name: orchestrator-k8s
+    type: application
+    urls:
+    - https://github.com/dmartinol/orchestrator-helm-chart/releases/download/orchestrator-k8s-0.3.2/orchestrator-k8s-0.3.2.tgz
+    version: 0.3.2
+generated: "2024-05-10T08:34:00.899870666Z"
